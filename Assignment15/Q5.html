@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let f = function (num) {
+if(num===0){
+    return num = 1
+}
+
+            return num * f(num - 1)
+        }
+        const input1 = 12
+        const input2 = 13
+        const input3 = 3
+
+        console.log(`Factorial of ${input1}: ${f(input1)}`);
+console.log(`Factorial of ${input2}: ${f(input2)}`);
+console.log(`Factorial of ${input3}: ${f(input3)}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  const lowIncomeRate = 0.1;   // 10%
+  const mediumIncomeRate = 0.15;  // 15%
+  const highIncomeRate = 0.2;   // 20%
+
+  // Closure function to calculate tax based on income
+   function calculateTaxForIncome (income) {
+    if (income <= 50000) {
+      return income * lowIncomeRate;
+    } else if (income <= 100000) {
+      return income * mediumIncomeRate;
+    } else {
+      return income * highIncomeRate;
+    }
+  };
+
+  let income= prompt('enter your income')
+
+
+
+console.log(`Tax for income ${income}: ${calculateTaxForIncome(income)}`);
+
+    </script>
+</body>
+</html>

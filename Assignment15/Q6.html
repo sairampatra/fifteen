@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function curry(originalFunction) {
+  // Keep track of arguments received so far
+  const args = [];
+
+  // Return a function for currying
+  return function curriedFunction(arg) {
+    // Store the argument
+    args.push(arg);
+
+    // Check if all arguments are provided
+    if (args.length === originalFunction.length) {
+      // If yes, execute the original function with all arguments
+      return originalFunction(...args);
+    } else {
+      // If not, continue the currying process by returning a new function
+      return curriedFunction;
+    }
+  };
+}
+
+// Test with a function that adds two numbers
+function add(a, b) {
+  return a + b;
+}
+
+// Create a curried version of the add function
+const curriedAdd = curry(add);
+
+// Test the curried function
+const result = curriedAdd(7)(7); // This should return the result of adding 2 and 3
+
+// Execute the original function with all arguments
+console.log(result); 
+    </script>
+</body>
+</html>
